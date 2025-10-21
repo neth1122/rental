@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Payments & Proofs — Zentury</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* === Internal Navbar Styles === */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #e8ecf4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .main-nav a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .main-nav a:hover {
+      color: #007bff;
+    }
+
+    /* Hamburger icon (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+    .menu-bar {
+      width: 26px;
+      height: 2px;
+      background-color: #111;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    /* === Mobile View === */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .main-nav {
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        backdrop-filter: blur(10px);
+      }
+      .main-nav a {
+        margin: 10px 0;
+        font-size: 1rem;
+      }
+      .main-nav.open {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      @keyframes slideDown {
+        from {opacity: 0; transform: translateY(-10px);}
+        to {opacity: 1; transform: translateY(0);}
+      }
+
+      /* Hamburger to X animation */
+      .menu-toggle.active .menu-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .menu-toggle.active .menu-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle.active .menu-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Zentury — Rent LinkedIn</a>
+
+      <!-- Hamburger -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms</a>
+        <a href="payment.html">Payment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Payment Schedule & Proofs</h1>
+      <p>Payments are processed Wednesday — Friday (night). Below are proof placeholders and instructions for sending screenshots to admin.</p>
+
+      <div class="gallery" id="proofs">
+        <!-- thumbnails inserted by JS if available; placeholders otherwise -->
+      </div>
+
+      <h2>How to report a successful deposit</h2>
+      <ol>
+        <li>Take a screenshot after your account is successfully listed.</li>
+        <li>Upload the screenshot via the report form or send directly to admin on WhatsApp.</li>
+        <li>Wait for confirmation.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer container">© Zentury — Rent LinkedIn</footer>
+
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    // Toggle menu open/close
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+    });
+
+    // Auto-close when a link is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

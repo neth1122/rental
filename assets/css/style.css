@@ -1,0 +1,202 @@
+:root{--accent:#2a7ae2;--muted:#666;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;color:#111;line-height:1.45;background:#f7f9fb}
+.container{max-width:980px;margin:0 auto;padding:24px}
+.site-header{background:#fff;border-bottom:1px solid #e6eef8}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{font-weight:700;color:var(--accent);text-decoration:none}
+.main-nav a{margin-left:18px;text-decoration:none;color:#334}
+.hero{padding:48px 0;background:linear-gradient(180deg,#ffffff, #f4f8ff)}
+.lede{color:var(--muted);max-width:680px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;border:1px solid transparent}
+.btn.primary{background:var(--accent);color:#fff}
+.card{background:#fff;border-radius:12px;padding:20px;margin-top:18px;box-shadow:0 6px 20px rgba(40,48,66,0.06)}
+.muted{color:var(--muted);font-size:0.95rem}
+.form label{display:block;margin-bottom:10px}
+.form input,.form select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8}
+.form-actions{display:flex;gap:12px;margin-top:12px}
+.site-footer{padding:28px 0;text-align:center;color:var(--muted);margin-top:28px}
+@media(min-width:900px){.hero{padding:72px 0}}
+
+
+    /* Bright, clean professional theme for clock & countdown */
+    .countdown-container {
+      background: linear-gradient(145deg, #ffffff, #f7faff);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #e0e6f0;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+    .clock-3d {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff, #f0f5ff);
+      border: 2px solid #dfe6f5;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      transform: perspective(500px) rotateX(10deg);
+    }
+    .clock-3d::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #111;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    .clock-3d .hour, .clock-3d .min, .clock-3d .sec {
+      position: absolute;
+      border-radius: 50%;
+      transform-origin: bottom center;
+      bottom: 50%;
+    }
+    .clock-3d .hour { width: 6px; height: 30px; background: #1a73e8; }
+    .clock-3d .min { width: 4px; height: 40px; background: #00c853; }
+    .clock-3d .sec { width: 2px; height: 50px; background: #ff5252; }
+
+.clock-digits { font-size: 0.7rem; color: #333; position: absolute; font-weight: bold; }
+.clock-digit-12 { top: 8px; left: 50%; transform: translateX(-50%); }
+.clock-digit-3 { right: 8px; top: 50%; transform: translateY(-50%); }
+.clock-digit-6 { bottom: 8px; left: 50%; transform: translateX(-50%); }
+.clock-digit-9 { left: 8px; top: 50%; transform: translateY(-50%); }
+
+.time-status { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.time-status-item { text-align: center; padding: 0.5rem 1rem; border-radius: 0.5rem; background: #f8f9fb; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.time-status-label { font-size: 0.75rem; color: #666; }
+.time-status-value { font-size: 1.1rem; font-weight: 600; color: #111; }
+
+.testimonials .card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+}
+.testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.testimonials img {
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials img:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.proof-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #fff;
+}
+.proof-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .proof-img {
+    height: 120px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 576px) {
+  .proof-img {
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+/* --- Header --- */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e8ecf4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.site-header .brand {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* --- Desktop Nav --- */
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.main-nav a:hover {
+  color: #007bff;
+}
+
+/* --- Hamburger Icon --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.menu-bar {
+  width: 24px;
+  height: 2px;
+  background-color: #111;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* --- Mobile Nav --- */
+@media (max-width: 768px) {
+  .main-nav {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    left: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  .main-nav a {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  .main-nav.open {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Hamburger to X animation */
+  .menu-toggle.active .menu-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.active .menu-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .menu-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
