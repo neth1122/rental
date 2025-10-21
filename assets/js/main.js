@@ -36,7 +36,7 @@
   function buildWhatsAppLink(data){
     // Always avoid sending raw passwords in prefilled messages. We ask users to provide only masked password
     var lines = []
-    lines.push('New deposit submission from Rental-Akun Revamp')
+    lines.push('New deposit submission from Zentury enterprise demo website')
     lines.push('Account email: ' + data.email)
     lines.push('Password (masked): ' + data.passwordMasked)
     lines.push('Connections: ' + data.connections)
